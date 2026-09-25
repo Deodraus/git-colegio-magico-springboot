@@ -4,12 +4,14 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
 import com.quipux.colegio.services.HechizoService;
+import com.quipux.colegio.services.MagoService;
 
 @Component
 public class JerseyConfig extends ResourceConfig {
     public JerseyConfig() {
         // Registrar el servicio/controlador para exponer la API
         register(HechizoService.class);
+        register(MagoService.class);
         
         // Registrar recursos de OpenAPI/Swagger
         register(io.swagger.v3.jaxrs2.integration.resources.OpenApiResource.class);
